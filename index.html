@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition Space | Portfolio</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://drive.google.com/thumbnail?id=1qLATFNObFQTmVyLRLTZXYEqXxs_8Bfhz&sz=w1000">
+    <link rel="apple-touch-icon" href="https://drive.google.com/thumbnail?id=1qLATFNObFQTmVyLRLTZXYEqXxs_8Bfhz&sz=w1000">
+    
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:title" content="Nutrition Space | Portfolio">
+    <meta property="og:description" content="Personalized, evidence-based nutrition care.">
+    <meta property="og:image" content="https://drive.google.com/thumbnail?id=1qLATFNObFQTmVyLRLTZXYEqXxs_8Bfhz&sz=w1000">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Nutrition Space | Portfolio">
+    <meta name="twitter:description" content="Personalized, evidence-based nutrition care.">
+    <meta name="twitter:image" content="https://drive.google.com/thumbnail?id=1qLATFNObFQTmVyLRLTZXYEqXxs_8Bfhz&sz=w1000">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Caveat:wght@400;700&family=Great+Vibes&family=Poppins:wght@400;600;700&display=swap&family=Fond+Audrey&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <style>
+        /* Define your brand colors */
+        .text-brand-green { color: #008080; } /* Example color */
+        .bg-brand-green { background-color: #008080; } /* Example color */
+        
+        /* 💥 NEW GLOBAL FONT: POPPINS 💥 */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #e5e5e5;
+        }
+
+        /* Custom Font Class Definitions (MUST BE KEPT for specific headers/sections) */
+
+        .font-script {
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .font-holiday {
+            font-family: 'Great Vibes', cursive;
+        }
+
+        .font-handsome {
+            font-family: 'Caveat', cursive;
+        }
+        
+        .font-audrey { 
+             font-family: 'Fond Audrey', serif;
+        }
+
+        /* NOTE: The .font-lato and body font-family: 'Inter' definitions have been removed/updated */
+
+        .nav-link.active {
+            color: #B91C1C;
+            border-bottom: 2px solid #B91C1C;
+        }
+
+        /* Styles for the booking modal */
+        .modal-overlay {
+            transition: opacity 0.3s ease;
+        }
+        .modal-content {
+            transition: all 0.3s ease;
+        }
+
+        /* Animation for cards/sections */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            /* This animation will be applied on load */
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        /* Custom color for brand green */
+        .text-brand-green {
+            color: #2e6417;
+        }
+        .bg-brand-green {
+            background-color: #2e6417;
+        }
+        .border-brand-green {
+            border-color: #2e6417;
+        }
+        .focus\:ring-brand-green:focus {
+            --tw-ring-color: #2e6417;
+        }
+        .focus\:border-brand-green:focus {
+             --tw-border-opacity: 1;
+            border-color: #2e6417;
+        }
+
+        /* Ellipse text container */
+        .circular-text-container {
+            width: 280px; /* Base width for mobile */
+            height: 220px; /* Base height for mobile */
+            border: 3px dashed #ef4444; /* Red dashed border */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            transform: rotate(-12deg); /* Aesthetically imperfect tilt */
+            transition: transform 0.3s ease;
+        }
+        .circular-text-container:hover {
+            transform: rotate(0deg); /* Straightens out on hover */
+        }
+        @media (min-width: 640px) { /* sm breakpoint */
+            .circular-text-container {
+                width: 320px; /* Larger width for desktop */
+                height: 250px; /* Larger height for desktop */
+            }
+        }
+
+        /* Blinking cursor for typewriter */
+        .blinking-cursor {
+            border-right: .15em solid #2e6417;
+            animation: blink-caret .75s step-end infinite;
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #2e6417; }
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20"> <!-- Increased nav height from h-16 -->
+                <!-- Logo/Brand Name -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="page-link" data-target="home">
+                        <img class="h-16 w-auto" src="https://drive.google.com/thumbnail?id=1qLATFNObFQTmVyLRLTZXYEqXxs_8Bfhz&sz=w1000" alt="Nutrition Space Logo"> <!-- Increased logo size from h-10 -->
+                    </a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-gray-800 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-green">
+                        <span class="sr-only">Open main menu</span>
+                        <!-- Hamburger Icon -->
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                        <!-- Close Icon -->
+                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <!-- Desktop Navigation Links -->
+                <div class="hidden md:flex md:space-x-6 lg:space-x-8">
+                    <a href="#home" class="nav-link text-gray-600 hover:text-red-700 px-3 py-2 rounded-md text-sm font-medium page-link active" data-target="home">Home</a>
+                    <a href="#about" class="nav-link text-gray-600 hover:text-red-700 px-3 py-2 rounded-md text-sm font-medium page-link" data-target="about">About Me</a>
+                    <a href="#services" class="nav-link text-gray-600 hover:text-red-700 px-3 py-2 rounded-md text-sm font-medium page-link" data-target="services">Our Services</a>
+                    <a href="#pricing" class="nav-link text-gray-600 hover:text-red-700 px-3 py-2 rounded-md text-sm font-medium page-link" data-target="pricing">Pricing</a>
+                    <a href="#testimonials" class="nav-link text-gray-600 hover:text-red-700 px-3 py-2 rounded-md text-sm font-medium page-link" data-target="testimonials">Testimonials</a>
+                    <a href="#partnerships" class="nav-link text-gray-600 hover:text-red-700 px-3 py-2 rounded-md text-sm font-medium page-link" data-target="partnerships">Partnerships</a>
+                    <a href="#impact" class="nav-link text-gray-600 hover:text-red-700 px-3 py-2 rounded-md text-sm font-medium page-link" data-target="impact">Our Impact</a>
+                    <a href="#contact" class="nav-link text-gray-600 hover:text-red-700 px-3 py-2 rounded-md text-sm font-medium page-link" data-target="contact">Contact</a>
+                </div>
+            </div>
+
+            <!-- Mobile Menu, hidden by default -->
+            <div id="mobile-menu" class="md:hidden hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                    <a href="#home" class="nav-link-mobile text-gray-600 hover:bg-gray-100 hover:text-red-700 block px-3 py-2 rounded-md text-base font-medium page-link active" data-target="home">Home</a>
+                    <a href="#about" class="nav-link-mobile text-gray-600 hover:bg-gray-100 hover:text-red-700 block px-3 py-2 rounded-md text-base font-medium page-link" data-target="about">About Me</a>
+                    <a href="#services" class="nav-link-mobile text-gray-600 hover:bg-gray-100 hover:text-red-700 block px-3 py-2 rounded-md text-base font-medium page-link" data-target="services">Our Services</a>
+                    <a href="#pricing" class="nav-link-mobile text-gray-600 hover:bg-gray-100 hover:text-red-700 block px-3 py-2 rounded-md text-base font-medium page-link" data-target="pricing">Pricing</a>
+                    <a href="#testimonials" class="nav-link-mobile text-gray-600 hover:bg-gray-100 hover:text-red-700 block px-3 py-2 rounded-md text-base font-medium page-link" data-target="testimonials">Testimonials</a>
+                    <a href="#partnerships" class="nav-link-mobile text-gray-600 hover:bg-gray-100 hover:text-red-700 block px-3 py-2 rounded-md text-base font-medium page-link" data-target="partnerships">Partnerships</a>
+                    <a href="#impact" class="nav-link-mobile text-gray-600 hover:bg-gray-100 hover:text-red-700 block px-3 py-2 rounded-md text-base font-medium page-link" data-target="impact">Our Impact</a>
+                    <a href="#contact" class="nav-link-mobile text-gray-600 hover:bg-gray-100 hover:text-red-700 block px-3 py-2 rounded-md text-base font-medium page-link" data-target="contact">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <!-- All sections are wrapped in a container that will be shown/hidden by JS -->
+    <main class="container mx-auto p-4 sm:p-6 lg:p-8 min-h-[calc(100vh-160px)] overflow-x-hidden">
+
+        <!-- Page 1: Home -->
+        <section id="home" class="page-content">
+            <div class="flex flex-col items-center justify-center text-center rounded-lg min-h-[70vh] relative">
+                
+                <div class="relative w-full overflow-x-hidden"> 
+                    
+                    <h1 class="text-red-700 text-center" 
+                        style="font-family: 'Fond Audrey', serif;">
+                        <span class="block text-7xl sm:text-[8rem] md:text-[10rem] lg:text-[12rem]" 
+                            style="line-height: 1.1; text-shadow: 2px 2px 4px rgba(0,0,0,0.1);">
+                            Nutrition
+                        </span>
+                    </h1>
+                    
+                    <h1 class="font-holiday text-brand-green text-center relative mt-4 md:mt-0 -top-6 sm:-top-10"> 
+                        <span class="block text-5xl sm:text-6xl md:text-[6rem] relative md:left-[100px]" 
+                            style="line-height: 1.1; text-shadow: 2px 2px 4px rgba(0,0,0,0.1);"
+                            id="typewriter-span">
+                            Space
+                        </span>
+                    </h1>
+                    
+                </div>
+                <div class="circular-text-container mt-8 mb-12">
+                    <p class="font-handsome text-brand-green text-3xl sm:text-[2.5rem]" style="line-height: 1.2;">
+                        Meal Plans, Tips <span class="text-red-700">+</span> <br> Accountability
+                    </p>
+                </div>
+                
+                <button id="book-now-button" class="mt-16 px-8 py-3 bg-red-700 text-white font-semibold rounded-lg shadow-md hover:bg-red-800 transition duration-300 transform hover:scale-105">
+                    Book With Us
+                </button>
+                
+                <p class="mt-16 sm:mt-20 font-handsome text-brand-green text-3xl sm:text-[2.25rem]">
+                    ...personalized, evidence-based nutrition care.
+                </p>
+                
+            </div>
+        </section>
+        <!-- Page 2: About Me -->
+        <section id="about" class="page-content hidden">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-5xl md:text-6xl font-script text-red-700 text-center mb-8">Nice to meet you!</h2>
+                <div class="bg-white p-8 rounded-lg shadow-xl overflow-hidden md:flex md:space-x-8">
+                    <div class="md:w-2/5 flex-shrink-0">
+                        <!-- Placeholder for "Nenye" -->
+                        <img src="https://drive.google.com/thumbnail?id=16LXlLEChsVpeDTibmj_Zc2D77YFt2o_g&sz=w1000" 
+                             alt="Chinenye Mgbojikwe" 
+                             class="rounded-lg object-cover w-full h-full"
+                             onerror="this.src='https://placehold.co/400x500/E0E0E0/333333?text=Chinenye+Mgbojikwe'; this.onerror=null;">
+                    </div>
+                    <div class="md:w-2/3 mt-6 md:mt-0">
+                        <h3 class="text-2xl font-bold text-brand-green">Chinenye Mgbojikwe, RD, MPH</h3>
+                        <p class="text-sm font-medium text-gray-500 italic">Registered Dietitian & Public Health Nutritionist</p>
+                        <p class="mt-4 text-gray-700 leading-relaxed">
+                            Hello! I'm Chinenye, a Registered Dietitian and Public Health Nutritionist dedicated to helping people like you achieve better health through practical, evidence-based nutrition.
+                        </p>
+                        <p class="mt-4 text-gray-700 leading-relaxed">
+                            With a background in both clinical dietetics and population health, I bring a unique, holistic perspective to nutrition care, one that connects science, and lifestyle.
+                        </p>
+                        <p class="mt-4 text-gray-700 leading-relaxed">
+                            Through Nutrition Space, I've had the privilege of supporting hundreds of clients with conditions such as hypertension, diabetes, ulcers, and weight management challenges. I also love collaborating with wellness brands and fitness centers to design sustainable, lifestyle-based nutrition programs that deliver lasting results.
+                        </p>
+                        <div class="mt-6">
+                            <a href="#" class="text-gray-600 hover:text-red-700 font-semibold">
+                                Find me on: @nutritionspace_co
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Image grid -->
+                <!-- UPDATED: Removed one image, changed grid to 3 columns on md -->
+                <div class="mt-12 grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <img src="https://drive.google.com/thumbnail?id=1WVvSjnVCPgM7lSAEos9R3rFPSJAnx7FS&sz=w1000" 
+                         alt="Healthy Food" 
+                         class="rounded-lg shadow-md w-full h-auto object-cover aspect-square transform hover:scale-105 transition-transform duration-300"
+                         onerror="this.src='https://placehold.co/300x300/FEE2E2/B91C1C?text=Healthy+Bowl'; this.onerror=null;">
+                    <img src="https://drive.google.com/thumbnail?id=16Dt9Mvau_8Rd9NABzaRr8tHEoT9XcudJ&sz=w1000" 
+                         alt="Healthy Food" 
+                         class="rounded-lg shadow-md w-full h-auto object-cover aspect-square transform hover:scale-105 transition-transform duration-300"
+                         onerror="this.src='https://placehold.co/300x300/FEF3C7/D97706?text=Stir+Fry'; this.onerror=null;">
+                    <img src="https://drive.google.com/thumbnail?id=1rZJuFGlY6l4tO2TMaUt7gRsGz4xKKcwM&sz=w1000" 
+                         alt="Healthy Food" 
+                         class="rounded-lg shadow-md w-full h-auto object-cover aspect-square transform hover:scale-105 transition-transform duration-300"
+                         onerror="this.src='https://placehold.co/300x300/D1FAE5/047857?text=Curry'; this.onerror=null;">
+                </div>
+            </div>
+        </section>
+
+        <!-- Page 3: Our Services -->
+        <section id="services" class="page-content hidden">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-6xl md:text-7xl font-script text-red-700 text-center mb-12">Our Services</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service Item 1 -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 fade-in">
+                        <h3 class="text-xl font-bold text-brand-green">Medical Nutrition Therapy (MNT)</h3>
+                        <p class="mt-2 text-gray-600">Evidence-based interventions for conditions including Diabetes, Hypertension, Ulcer, and cardiovascular diseases.</p>
+                    </div>
+                    <!-- Service Item 2 -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 fade-in" style="animation-delay: 100ms;">
+                        <h3 class="text-xl font-bold text-brand-green">Meal Planning & Coaching</h3>
+                        <p class="mt-2 text-gray-600">Customized meal plans tailored to individual goals, preferences, and medical needs.</p>
+                    </div>
+                    <!-- Service Item 3 -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 fade-in" style="animation-delay: 200ms;">
+                        <h3 class="text-xl font-bold text-brand-green">Lifestyle & Weight Management Coaching</h3>
+                        <p class="mt-2 text-gray-600">Programs supporting safe, sustainable weight loss and improved metabolic health.</p>
+                    </div>
+                    <!-- Service Item 4 -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 fade-in" style="animation-delay: 300ms;">
+                        <h3 class="text-xl font-bold text-brand-green">Telehealth Support</h3>
+                        <p class="mt-2 text-gray-600">Virtual dietitian consultations and progress tracking through secure online platforms.</p>
+                    </div>
+                    <!-- Service Item 5 -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 fade-in" style="animation-delay: 400ms;">
+                        <h3 class="text-xl font-bold text-brand-green">Corporate Wellness & Staff Nutrition</h3>
+                        <p class="mt-2 text-gray-600">Partnering with organizations to improve employee wellbeing and productivity.</p>
+                    </div>
+                    <!-- Service Item 6 -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 fade-in" style="animation-delay: 500ms;">
+                        <h3 class="text-xl font-bold text-brand-green">Nutrition Education & Workshops</h3>
+                        <p class="mt-2 text-gray-600">Interactive sessions for schools, fitness centers, and corporate teams on key health topics.</p>
+                    </div>
+                </div>
+                 <!-- Image placeholder grid -->
+                 <!-- UPDATED: 4 images (3 new + 1 moved from About Me) -->
+                <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <!-- New Image 1 -->
+                    <img src="https://drive.google.com/thumbnail?id=1NWaowKeQ1W6mu0IvNLHN8XTG4tIXgj1Y&sz=w1000" alt="Service Image 1" class="rounded-lg shadow-md w-full h-auto object-cover transform hover:scale-105 transition-transform duration-300 aspect-square">
+                    <!-- New Image 2 -->
+                    <img src="https://drive.google.com/thumbnail?id=1HPeJKsaRAXiPmfTj9FQLsxQoPRqWCCUf&sz=w1000" alt="Service Image 2" class="rounded-lg shadow-md w-full h-auto object-cover transform hover:scale-105 transition-transform duration-300 aspect-square">
+                    <!-- New Image 3 -->
+                    <img src="https://drive.google.com/thumbnail?id=1MEq-VG18rUvY6LsWv4pPbL3d66A1AFkS&sz=w1000" alt="Service Image 3" class="rounded-lg shadow-md w-full h-auto object-cover transform hover:scale-105 transition-transform duration-300 aspect-square">
+                    <!-- Moved Image from About Me -->
+                    <img src="https://drive.google.com/thumbnail?id=19gLLRWf7NoL1P8g754ntviy1KogWa6Dj&sz=w1000" alt="Rice Dish" class="rounded-lg shadow-md w-full h-auto object-cover transform hover:scale-105 transition-transform duration-300 aspect-square">
+                </div>
+            </div>
+        </section>
+
+        <!-- Page 4: Pricing -->
+        <section id="pricing" class="page-content hidden">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="text-6xl md:text-7xl font-script text-red-700 text-center mb-8">Our Plans</h2>
+        <p class="text-center text-xl text-gray-700 mb-12 max-w-2xl mx-auto">Choose a package that's right for you.</p>
+        
+        <!-- One-Time Consultation (Full Width Block) -->
+        <div class="max-w-xl mx-auto mb-16">
+            <div class="bg-white p-8 rounded-lg shadow-xl flex flex-col transform hover:scale-105 transition-transform duration-300 fade-in border-b-4 border-red-700">
+                <h3 class="text-2xl font-bold text-brand-green text-center">One-Time Consultation</h3>
+                <p class="text-4xl font-bold text-center my-4 text-red-700">&#8358;15,000</p>
+                <p class="text-center text-gray-600 mb-6">A quick, focused session to address immediate needs.</p>
+                <ul class="space-y-3 list-disc list-inside text-gray-700 mb-8 flex-grow">
+                    <li>30-minute virtual consultation</li>
+                    <li>Review of current eating habits</li>
+                    <li>Key action plan summary</li>
+                    <li>Guidance on immediate dietary steps</li>
+                </ul>
+                <button class="mt-auto px-6 py-3 bg-red-700 text-white font-semibold rounded-lg shadow-md hover:bg-red-800 transition duration-300 book-now-modal-button">Book Consultation</button>
+            </div>
+        </div>
+
+        <!-- NEW SUBHEADING -->
+        <h3 class="text-4xl font-bold text-brand-green text-center mb-8 pt-4 border-t border-gray-300">Meal Plan Packages</h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <!-- Pricing Card 1: Jumpstart Plan (New - ₦60,000) -->
+            <div class="bg-white p-6 rounded-lg shadow-xl flex flex-col transform hover:scale-105 transition-transform duration-300 fade-in">
+                <h3 class="text-xl font-bold text-red-700 text-center">Jumpstart Plan</h3>
+                <p class="text-sm font-semibold text-center text-gray-600 mb-2">21 Days of Focused Change</p>
+                <p class="text-3xl font-bold text-center my-3">&#8358;60,000</p>
+                <ul class="space-y-2 list-disc list-inside text-gray-700 mb-6 flex-grow text-sm">
+                    <li>Initial 30-min consultation</li>
+                    <li>Full dietary assessment</li>
+                    <li>Custom 3-week meal plan</li>
+                    <li>Basic WhatsApp support (M-F)</li>
+                </ul>
+                <button class="mt-auto px-6 py-3 bg-red-700 text-white font-semibold rounded-lg shadow-md hover:bg-red-800 transition duration-300 book-now-modal-button">Start Now</button>
+            </div>
+
+            <!-- Pricing Card 2: One-Month Package (Modified - ₦80,000) - Most Popular -->
+            <div class="bg-white p-6 rounded-lg shadow-2xl flex flex-col border-4 border-brand-green transform scale-105 fade-in" style="animation-delay: 150ms;">
+                <span class="bg-brand-green text-white text-xs font-bold px-3 py-1 rounded-full self-center mb-4">Most Popular</span>
+                <h3 class="text-xl font-bold text-red-700 text-center">One-Month Package</h3>
+                <p class="text-sm font-semibold text-center text-gray-600 mb-2">Sustained 4-Week Support</p>
+                <p class="text-3xl font-bold text-center my-3">&#8358;80,000</p>
+                <ul class="space-y-2 list-disc list-inside text-gray-700 mb-6 flex-grow text-sm">
+                    <li>Initial 60-min consultation</li>
+                    <li>Two 30-min follow-up sessions</li>
+                    <li>Customized weekly meal plans</li>
+                    <li>WhatsApp & email support</li>
+                    <li>Progress tracking & adjustments</li>
+                </ul>
+                <button class="mt-auto px-6 py-3 bg-red-700 text-white font-semibold rounded-lg shadow-md hover:bg-red-800 transition duration-300 book-now-modal-button">Book Monthly</button>
+            </div>
+
+            <!-- Pricing Card 3: Three-Month Plan (Modified - ₦220,000) -->
+            <div class="bg-white p-6 rounded-lg shadow-xl flex flex-col transform hover:scale-105 transition-transform duration-300 fade-in" style="animation-delay: 300ms;">
+                <h3 class="text-xl font-bold text-red-700 text-center">Three-Month Plan</h3>
+                <p class="text-sm font-semibold text-center text-gray-600 mb-2">Long-Term Lifestyle Change</p>
+                <p class="text-3xl font-bold text-center my-3">&#8358;220,000</p>
+                <ul class="space-y-2 list-disc list-inside text-gray-700 mb-6 flex-grow text-sm">
+                    <li>Everything in Monthly Package</li>
+                    <li>Six 30-min check-ins (bi-weekly)</li>
+                    <li>In-depth recipe modifications</li>
+                    <li>Personalized supplement guidance</li>
+                    <li>Priority direct access for questions</li>
+                </ul>
+                <button class="mt-auto px-6 py-3 bg-red-700 text-white font-semibold rounded-lg shadow-md hover:bg-red-800 transition duration-300 book-now-modal-button">Enroll Now</button>
+            </div>
+
+            <!-- Pricing Card 4: Six-Month Plan (New - ₦420,000) -->
+            <div class="bg-white p-6 rounded-lg shadow-xl flex flex-col transform hover:scale-105 transition-transform duration-300 fade-in" style="animation-delay: 450ms;">
+                <h3 class="text-xl font-bold text-red-700 text-center">Six-Month Transformation</h3>
+                <p class="text-sm font-semibold text-center text-gray-600 mb-2">Total Wellness Immersion</p>
+                <p class="text-3xl font-bold text-center my-3">&#8358;420,000</p>
+                <ul class="space-y-2 list-disc list-inside text-gray-700 mb-6 flex-grow text-sm">
+                    <li>Everything in Three-Month Plan</li>
+                    <li>Weekly 30-min check-ins (12 total)</li>
+                    <li>In-depth recipe modifications</li>
+                    <li>Personalized supplement guidance</li>
+                    <li>Priority direct access for questions</li>
+                </ul>
+                <button class="mt-auto px-6 py-3 bg-red-700 text-white font-semibold rounded-lg shadow-md hover:bg-red-800 transition duration-300 book-now-modal-button">Start Transformation</button>
+            </div>
+        </div>
+        
+        <!-- Custom/Corporate Packages (Listings Below Grid) -->
+        <div class="mt-16 pt-8 border-t border-gray-300">
+            <h3 class="text-3xl font-bold text-brand-green text-center mb-6">Partnerships & Education</h3>
+            <div class="space-y-4 max-w-4xl mx-auto">
+                
+                <!-- Listing 1: Corporate Wellness -->
+                <div class="p-4 bg-white rounded-lg shadow-lg flex flex-col sm:flex-row justify-between items-start sm:items-center transform hover:scale-[1.01] transition-transform duration-300">
+                    <p class="text-xl font-semibold text-gray-800">Corporate Wellness & Staff Nutrition Programs</p>
+                    <span class="text-red-700 font-bold text-lg mt-2 sm:mt-0">Custom Packages Available</span>
+                </div>
+                
+                <!-- Listing 2: Education & Workshops -->
+                <div class="p-4 bg-white rounded-lg shadow-lg flex flex-col sm:flex-row justify-between items-start sm:items-center transform hover:scale-[1.01] transition-transform duration-300">
+                    <p class="text-xl font-semibold text-gray-800">Nutrition Education & Workshops</p>
+                    <span class="text-red-700 font-bold text-lg mt-2 sm:mt-0">Custom Packages Available</span>
+                </div>
+                
+                <p class="text-center text-gray-600 mt-6">Contact us directly to discuss your specific needs and receive a tailored quote.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+        <!-- Page 5: Client Testimonials -->
+       <section id="testimonials" class="page-content hidden">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-5xl md:text-6xl font-script text-red-700 text-center mb-12">Client Testimonials</h2>
+
+                <div class="text-center mb-12">
+                    <img src="https://drive.google.com/thumbnail?id=1VuCWVrWl7mvWWPSpZ8uEBsdVaw6hILt_&sz=w1000" 
+                        alt="Delicious plate of food" 
+                        class="mx-auto rounded-full shadow-md w-64 h-64 object-cover"
+                        onerror="this.src='https://placehold.co/256x256/FEE2E2/B91C1C?text=Delicious+Food'; this.onerror=null;">
+                </div>
+                
+                <div class="space-y-8">
+                    <div class="bg-white p-8 rounded-lg shadow-lg border-l-4 border-brand-green">
+                        <p class="text-gray-700 italic leading-relaxed">"Chinenye was patient and very professional in collecting information from me and showed excellent service in providing me with a diet that improved not only my gut health but also enabled me to eat healthier and the right amount of protein, etc."</p>
+                        <p class="mt-4 font-semibold text-right text-red-700">- Tochi Okafor, 30</p>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-lg shadow-lg border-l-4 border-brand-green">
+                        <p class="text-gray-700 italic leading-relaxed">"Before Nutrition Space, I was confused about what to eat for my ulcer. Now, I eat comfortably, and my symptoms are under control. I finally feel well again."</p>
+                        <p class="mt-4 font-semibold text-right text-red-700">- Jemima, 27</p>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-lg shadow-lg border-l-4 border-brand-green">
+                        <p class="text-gray-700 italic leading-relaxed">"I would like to attest to the effectiveness, health benefits, and excellent quality of the nutritional meal plan prepared for me... My daughter introduced me to her for a consultation... I lost nearly 10kg. Ms. Nenye is a skilled dietitian. Her meal plans are well-balanced, nutritious, and affordable... I wholeheartedly recommend her services."</p>
+                        <p class="mt-4 font-semibold text-right text-red-700">- Becky Jegede, 58</p>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-lg shadow-lg border-l-4 border-brand-green">
+                        <p class="text-gray-700 italic leading-relaxed">"I thoroughly loved your attention to details, your work ethic is very commendable. Your passion towards making sure I ate better, worked out harder (even if it was taking walks) felt like I won even on days I felt I lost. Lost weight and still loosing thanks to your meal plan. I would recommend any day anytime."</p>
+                        <p class="mt-4 font-semibold text-right text-red-700">- Endy, 35</p>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-lg shadow-lg border-l-4 border-brand-green">
+                        <p class="text-gray-700 italic leading-relaxed">"Nenye worked with me closely to tailor my meal plan with foods I was mainly used to eating so it was super easy to follow, and I didn’t feel like I was starving myself or missing out on too much. Over time, I actually started seeing results — I lost a few kilos and just felt better overall. I would say it was a lot of meal prep involved so I kinda got lazy and stopped but for the period I was sticking to the plan, I did see consistent results."</p>
+                        <p class="mt-4 font-semibold text-right text-red-700">- Luiwanger Ibi, 31</p>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-lg shadow-lg border-l-4 border-brand-green">
+                        <p class="text-gray-700 italic leading-relaxed">"MY NUTRITIONIST! THANK YOU FOR ALL YOUR PROFFESSIONAL ADVICE, PATIENCE, MEAL PLANS ETC. IN FACT, PEOPLE ARE NOTICING AND COMMENTING ON THE POSITIVE IMPROVEMENT IN MY HEALTH AND EVEN APPEARANCE. I AM QUICK TO TELL THEM, I AM COOPERATING WITH MY NUTRITIONIST, EVEN MY BLOOD SUGAR HAS BEEN UNDER CONTROL. KUDOS.!"</p>
+                        <p class="mt-4 font-semibold text-right text-red-700">- Ifeyinwa Onubogu, 65</p>
+                    </div>
+                    
+                </div>
+                
+                <div class="text-center mt-16">
+                    <button id="book-now-button-testimonials" class="book-now-modal-button px-8 py-3 bg-red-700 text-white font-semibold shadow-md hover:bg-red-800 transition duration-300 transform hover:scale-105">
+                        Book Your Personalized Plan Now
+                    </button>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- Page 6: Partnerships -->
+        <section id="partnerships" class="page-content hidden">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-6xl md:text-7xl font-script text-brand-green text-center mb-12">Partnerships</h2>
+                <div class="bg-white p-8 rounded-lg shadow-xl">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Collaborations & Partnerships</h3>
+                    <p class="text-lg text-gray-700 mb-6">
+                        Nutrition Space has worked with a variety of brands and wellness platforms to deliver nutrition-centered solutions and campaigns.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <span class="text-brand-green font-bold text-xl mr-3">■</span>
+                            <span class="text-gray-700"><strong class="text-gray-900">Raw Beauty Bar:</strong> Nutrition advisory and meal plan development for diabetes and hormonal imbalances as well as wellness integration.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-green font-bold text-xl mr-3">■</span>
+                            <span class="text-gray-700"><strong class="text-gray-900">Get Ubi:</strong> Consultant dietitian for wellness products and educational campaigns.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-green font-bold text-xl mr-3">■</span>
+                            <span class="text-gray-700"><strong class="text-gray-900">Aunty Flo's Box:</strong> Nutrition consultant for women's reproductive health.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-green font-bold text-xl mr-3">■</span>
+                            <span class="text-gray-700"><strong class="text-gray-900">MaxFit Gym:</strong> Partner dietitian for fitness-focused nutrition coaching and client programs.</span>
+                        </li>
+                    </ul>
+                </div>
+                 <!-- Placeholder Image COMMENTED OUT -->
+                <!-- <div class="mt-8">
+                    <img src="https://placehold.co/800x400/D1FAE5/047857?text=Partnership+Showcase" alt="Partnerships" class="rounded-lg shadow-md w-full h-auto object-cover">
+                </div> -->
+            </div>
+        </section>
+
+        <!-- Page 7: Our Impact -->
+        <section id="impact" class="page-content hidden">
+            <div class="max-w-5xl mx-auto text-center">
+                <h2 class="text-6xl md:text-7xl font-script text-brand-green text-center mb-12">Our Impact</h2>
+                
+                <h3 class="text-4xl font-handsome text-red-700 mb-8">Impact Snapshot</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-16">
+                    <!-- Stat 1 -->
+                    <div class="bg-white p-6 sm:p-8 rounded-lg shadow-xl transform hover:scale-110 transition-transform duration-300 fade-in">
+                        <p class="text-5xl sm:text-6xl font-bold text-brand-green">180+</p>
+                        <p class="text-lg text-gray-600 mt-2">National & Intl. Clients</p>
+                    </div>
+                    <!-- Stat 2 -->
+                    <div class="bg-white p-6 sm:p-8 rounded-lg shadow-xl transform hover:scale-110 transition-transform duration-300 fade-in" style="animation-delay: 150ms;">
+                        <p class="text-5xl sm:text-6xl font-bold text-brand-green">15</p>
+                        <p class="text-lg text-gray-600 mt-2">Partners & Collaborators</p>
+                    </div>
+                    <!-- Stat 3 -->
+                    <div class="bg-white p-6 sm:p-8 rounded-lg shadow-xl transform hover:scale-110 transition-transform duration-300 fade-in" style="animation-delay: 300ms;">
+                        <p class="text-5xl sm:text-6xl font-bold text-brand-green">100</p>
+                        <p class="text-lg text-gray-600 mt-2">Reached via Community</p>
+                    </div>
+                </div>
+
+                <h3 class="text-4xl font-handsome text-red-700 mb-8">A Year with Unique Challenges</h3>
+                <div class="bg-white p-8 sm:p-10 rounded-lg shadow-xl text-left max-w-3xl mx-auto fade-in" style="animation-delay: 450ms;">
+                    <ul class="space-y-4 list-disc list-inside text-gray-700 text-base sm:text-lg">
+                        <li>Supported over <strong class="text-brand-green">300 clients</strong> across Nigeria and abroad.</li>
+                        <li>Improved <strong class="text-brand-green">chronic disease management</strong> outcomes through tailored nutrition care.</li>
+                        <li>Collaborated with wellness brands to integrate <strong class="text-brand-green">evidence-based nutrition</strong> into their services.</li>
+                        <li>Delivered educational sessions in fitness centers, health startups, and community settings.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Page 8: Contact -->
+       <section id="contact" class="page-content hidden">
+            <div class="max-w-4xl mx-auto bg-white p-8 sm:p-12 rounded-lg shadow-xl">
+                <h2 class="text-5xl md:text-6xl font-script text-red-700 text-center mb-10">Contact Us</h2>
+                
+                <div class="flex flex-col md:flex-row justify-around items-center text-center md:text-left">
+                    
+                    <div class="mb-8 md:mb-0">
+                        <h3 class="text-2xl font-bold text-brand-green">Nutrition Space</h3>
+                        <p class="mt-2 text-lg text-gray-600">Abuja, Nigeria</p>
+                        <p class="mt-1 text-lg text-gray-600">
+                            <a href="tel:+2348134003050" class="hover:text-red-700">+234-813-400-3050</a>
+                        </p>
+                        <p class="mt-1 text-lg text-gray-600">
+                            <a href="mailto:nutritionspace.co@gmail.com" class="hover:text-red-700">nutritionspace.co@gmail.com</a>
+                        </p>
+
+                        <div class="mt-4 flex items-center justify-center md:justify-start">
+                            <p class="text-lg font-semibold text-gray-700 mr-4">@nutritionspace_co</p>
+
+                            <div class="flex space-x-3 text-red-700">
+                                <a href="https://instagram.com/nutritionspace_co" target="_blank" class="hover:text-brand-green">
+                                    <i class="fa-brands fa-instagram fa-xl"></i>
+                                </a>
+                                <a href="YOUR_FACEBOOK_URL" target="_blank" class="hover:text-brand-green">
+                                    <i class="fa-brands fa-facebook-f fa-xl"></i>
+                                </a>
+                                <a href="YOUR_TWITTER_URL" target="_blank" class="hover:text-brand-green">
+                                    <i class="fa-brands fa-x-twitter fa-xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center md:w-1/2 md:mt-0 mt-8"> 
+    
+                        <p class="text-xl text-gray-800 font-medium mb-8"> 
+                            Ready to take control of your health?
+                        </p>
+                        
+                        <button class="book-now-modal-button mt-6 inline-block px-8 py-3 bg-brand-green text-white font-semibold rounded-lg shadow-md hover:bg-opacity-90 transition duration-300 transform hover:scale-105">
+                            Book Your Consultation
+                        </button>
+                        
+                        <p class="text-base text-gray-800 font-medium italic mt-6">
+                            "Redefining Everyday Nutrition Care."
+                        </p>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 text-gray-600 mt-16 shadow-inner">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+            <!-- Footer Logo -->
+            <div class="flex justify-center mb-6">
+                <img class="h-24 w-auto" src="https://drive.google.com/thumbnail?id=1qLATFNObFQTmVyLRLTZXYEqXxs_8Bfhz&sz=w1000" alt="Nutrition Space Logo"> <!-- Increased logo size from h-12 -->
+            </div>
+        
+            <div class="flex justify-center space-x-6 mb-4 text-2xl">
+                <a href="https://instagram.com/nutritionspace_co" target="_blank" class="text-gray-600 hover:text-red-700 transition duration-300">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="YOUR_FACEBOOK_URL" target="_blank" class="text-gray-600 hover:text-red-700 transition duration-300">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="YOUR_TWITTER_URL" target="_blank" class="text-gray-600 hover:text-red-700 transition duration-300">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+        </div>
+        
+            <div class="text-center text-sm">
+                <p>&copy; 2025 Nutrition Space. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Booking Form Modal -->
+    <div id="booking-modal" class="modal-overlay fixed inset-0 w-full h-full bg-black bg-opacity-75 flex items-center justify-center p-4 z-[100] hidden opacity-0">
+        <div class="modal-content bg-white w-full max-w-lg rounded-lg shadow-xl p-6 sm:p-8 relative transform scale-95 opacity-0 max-h-[90vh] overflow-y-auto">
+            <!-- Close button -->
+            <button id="close-modal-button" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-3xl">&times;</button>
+            
+            <h2 class="text-3xl font-bold text-brand-green mb-2 text-center">Book with us</h2>
+            <p class="text-center text-gray-600 mb-6">Please fill out this questionnaire so we can better understand your nutrition needs.</p>
+            
+            <!-- 
+              IMPORTANT: To receive form submissions, you MUST:
+              1. Create a free account at Formspree.io.
+              2. Create a new form in Formspree.
+              3. Replace the 'action' URL below with your unique Formspree form URL.
+            -->
+            <form action="https://formspree.io/f/xpwoggyj" method="POST" class="space-y-4">
+                <!-- Full Name -->
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-700">Full Name *</label>
+                    <input type="text" name="name" id="name" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-brand-green focus:border-brand-green">
+                </div>
+                
+                <!-- Email -->
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700">Email *</label>
+                    <input type="email" name="email" id="email" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-brand-green focus:border-brand-green">
+                </div>
+
+                <!-- Phone Number -->
+                <div>
+                    <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number *</label>
+                    <input type="tel" name="phone" id="phone" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-brand-green focus:border-brand-green">
+                </div>
+
+                <!-- Age -->
+                <div>
+                    <label for="age" class="block text-sm font-medium text-gray-700">Age *</label>
+                    <input type="number" name="age" id="age" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-brand-green focus:border-brand-green">
+                </div>
+
+                <!-- Gender -->
+                <div>
+                    <label for="gender" class="block text-sm font-medium text-gray-700">Gender *</label>
+                    <select name="gender" id="gender" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-brand-green focus:border-brand-green">
+                        <option value="">Select gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                        <option value="prefer_not_to_say">Prefer not to say</option>
+                    </select>
+                </div>
+
+                <!-- Health Conditions -->
+                <div>
+                    <label for="conditions" class="block text-sm font-medium text-gray-700">Do you have any health conditions? <span class="text-xs text-gray-500">(e.g., diabetes, hypertension, ulcer)</span></label>
+                    <textarea name="conditions" id="conditions" rows="3" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-brand-green focus:border-brand-green"></textarea>
+                </div>
+
+                <!-- Allergies -->
+                <div>
+                    <label for="allergies" class="block text-sm font-medium text-gray-700">Do you have any dietary restrictions or allergies?</label>
+                    <textarea name="allergies" id="allergies" rows="3" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-brand-green focus:border-brand-green"></textarea>
+                </div>
+
+                <!-- Nutrition Goals -->
+                <div>
+                    <label for="goals" class="block text-sm font-medium text-gray-700">What are your nutrition goals? *</label>
+                    <textarea name="goals" id="goals" rows="3" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-brand-green focus:border-brand-green"></textarea>
+                </div>
+                
+                <!-- Activity Level -->
+                <div>
+                    <label for="activity_level" class="block text-sm font-medium text-gray-700">Activity Level *</Gsl>
+                    <select name="activity_level" id="activity_level" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-brand-green focus:border-brand-green">
+                        <option value="">Select activity level</option>
+                        <option value="sedentary">Sedentary (little or no exercise)</option>
+                        <option value="lightly_active">Lightly active (exercise 1-3 days/week)</option>
+                        <option value="moderately_active">Moderately active (exercise 3-5 days/week)</option>
+                        <option value="very_active">Very active (exercise 6-7 days/week)</option>
+                        <option value="extra_active">Extra active (physical job or training twice per day)</option>
+                    </select>
+                </div>
+
+                <!-- Preferred Consultation Time -->
+                <div>
+                    <label for="consultation_time" class="block text-sm font-medium text-gray-700">Preferred consultation time</label>
+                    <input type="text" name="consultation_time" id="consultation_time" placeholder="E.g., Weekday afternoons" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-brand-green focus:border-brand-green">
+                </div>
+
+                <!-- Additional Information -->
+                <div>
+                    <label for="message" class="block text-sm font-medium text-gray-700">Any additional information you would like to share?</label>
+                    <textarea name="message" id="message" rows="3" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-brand-green focus:border-brand-green"></textarea>
+                </div>
+
+                <!-- Buttons -->
+                <div class="flex flex-col sm:flex-row sm:justify-end sm:space-x-4 space-y-2 sm:space-y-0 pt-2">
+                    <button type="button" id="cancel-modal-button" class="px-6 py-2 bg-gray-200 text-gray-700 font-semibold rounded-lg shadow-sm hover:bg-gray-300 transition duration-300 sm:w-auto w-full">
+                        Cancel
+                    </button>
+                    <button type="submit" class="px-6 py-2 bg-red-700 text-white font-semibold rounded-lg shadow-md hover:bg-red-800 transition duration-300 sm:w-auto w-full">
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const pageLinks = document.querySelectorAll('.page-link');
+            const mobilePageLinks = document.querySelectorAll('.nav-link-mobile');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const allPages = document.querySelectorAll('.page-content');
+            
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const hamburgerIcon = mobileMenuButton.querySelector('svg:first-child');
+            const closeIcon = mobileMenuButton.querySelector('svg:last-child');
+
+            // --- Booking Modal ---
+            const bookingModal = document.getElementById('booking-modal');
+            const modalContent = bookingModal.querySelector('.modal-content');
+            const bookNowButtons = document.querySelectorAll('.book-now-modal-button, #book-now-button');
+            const closeModalButton = document.getElementById('close-modal-button');
+            const cancelModalButton = document.getElementById('cancel-modal-button');
+            
+            // Open modal
+            bookNowButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    bookingModal.classList.remove('hidden');
+                    setTimeout(() => {
+                        bookingModal.classList.remove('opacity-0');
+                        modalContent.classList.remove('scale-95', 'opacity-0');
+                    }, 10);
+                });
+            });
+
+            // Close modal
+            function closeModal() {
+                modalContent.classList.add('scale-95', 'opacity-0');
+                bookingModal.classList.add('opacity-0');
+                setTimeout(() => {
+                    bookingModal.classList.add('hidden');
+                }, 300);
+            }
+
+            closeModalButton.addEventListener('click', closeModal);
+            cancelModalButton.addEventListener('click', closeModal);
+            bookingModal.addEventListener('click', (e) => {
+                if (e.target === bookingModal) {
+                    closeModal();
+                }
+            });
+
+            // --- Mobile Menu Toggle ---
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                hamburgerIcon.classList.toggle('hidden');
+                closeIcon.classList.toggle('hidden');
+            });
+
+            // --- Page Navigation ---
+            function handlePageLinkClick(e) {
+                e.preventDefault();
+                const targetId = e.currentTarget.dataset.target;
+                
+                showPage(targetId);
+
+                // Close mobile menu on navigation
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    hamburgerIcon.classList.remove('hidden');
+                    closeIcon.classList.add('hidden');
+                }
+            }
+            
+            pageLinks.forEach(link => {
+                link.addEventListener('click', handlePageLinkClick);
+            });
+            mobilePageLinks.forEach(link => {
+                link.addEventListener('click', handlePageLinkClick);
+            });
+
+            // --- Typewriter Effect ---
+            const typewriterText = "Space";
+            const typewriterElement = document.getElementById('typewriter-span');
+            let hasTyped = false;
+
+            function typeWriter() {
+                if (typewriterElement && !hasTyped) {
+                    hasTyped = true; // Set flag so it only types once
+                    typewriterElement.innerHTML = ""; // Clear it
+                    let i = 0;
+                    function type() {
+                        if (i < typewriterText.length) {
+                            typewriterElement.innerHTML += typewriterText.charAt(i);
+                            i++;
+                            setTimeout(type, 450); // Typing speed (slowed down from 300)
+                        } else {
+                            // Add cursor blink class when done
+                            typewriterElement.classList.add('blinking-cursor');
+                        }
+                    }
+                    type();
+                } else if (typewriterElement && hasTyped) {
+                    // If we return to home, just show the text and cursor
+                    typewriterElement.innerHTML = "Space";
+                    typewriterElement.classList.add('blinking-cursor');
+                }
+            }
+
+
+            // Function to show a page and update active links
+            function showPage(targetId) {
+                // Hide all pages
+                allPages.forEach(page => {
+                    page.classList.add('hidden');
+                });
+
+                // Show target page
+                const targetPage = document.getElementById(targetId);
+                if (targetPage) {
+                    targetPage.classList.remove('hidden');
+                }
+
+                // Trigger typewriter on home page
+                if (targetId === 'home') {
+                    typeWriter();
+                }
+
+                // Update active state for desktop nav links
+                navLinks.forEach(link => {
+                    link.classList.toggle('active', link.dataset.target === targetId);
+                });
+                
+                // Update active state for mobile nav links
+                mobilePageLinks.forEach(link => {
+                    link.classList.toggle('active', link.dataset.target === targetId);
+                    if(link.dataset.target === targetId) {
+                        link.classList.add('text-red-700', 'bg-gray-100');
+                    } else {
+                        link.classList.remove('text-red-700', 'bg-gray-100');
+                    }
+                });
+                
+                // Scroll to top of new page
+                window.scrollTo(0, 0);
+            }
+            
+            // Show home page by default
+            showPage('home');
+        });
+    </script>
+</body>
+</html>
