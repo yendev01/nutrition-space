@@ -127,13 +127,20 @@
         }
 
         /* Blinking cursor for typewriter */
-        .blinking-cursor {
-            border-right: .15em solid #2e6417;
+      /* Blinking cursor for typewriter */
+        .blinking-cursor::after {
+            content: ''; 
+            display: inline-block;
+            width: 2px;               /* Makes it THIN */
+            height: 0.6em;            /* Makes it SHORT (approx height of 'e') */
+            background-color: #2e6417;
+            margin-left: 4px;         /* Small space between text and cursor */
             animation: blink-caret .75s step-end infinite;
         }
+
         @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: #2e6417; }
+            from, to { opacity: 0 }   /* Changed from border-color to opacity */
+            50% { opacity: 1 }
         }
     </style>
 </head>
@@ -856,17 +863,27 @@
                         if (i < typewriterText.length) {
                             typewriterElement.innerHTML += typewriterText.charAt(i);
                             i++;
-                            setTimeout(type, 450); // Typing speed (slowed down from 300)
-                        } else {
+                            setTimeout(type, 450); // To slow down typing speed 
+                       } else {
                             // Add cursor blink class when done
                             typewriterElement.classList.add('blinking-cursor');
+
+                            // Stop blinking after 4 seconds (4000 milliseconds)
+                            setTimeout(() => {
+                                typewriterElement.classList.remove('blinking-cursor');
+                            }, 4000);
                         }
                     }
                     type();
-                } else if (typewriterElement && hasTyped) {
+               } else if (typewriterElement && hasTyped) {
                     // If we return to home, just show the text and cursor
                     typewriterElement.innerHTML = "Space";
                     typewriterElement.classList.add('blinking-cursor');
+                    
+                    // Stop blinking after 4 seconds
+                    setTimeout(() => {
+                        typewriterElement.classList.remove('blinking-cursor');
+                    }, 4000);
                 }
             }
 
@@ -915,3 +932,4 @@
 </body>
 
 </html>
+
